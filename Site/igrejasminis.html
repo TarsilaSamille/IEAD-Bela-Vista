@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)file:///C:/Users/20151164010106/Downloads/igrejasminis.html -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <script src="js/script.js"></script>
+
+    <style>
+    /*https://www.w3schools.com/howto/howto_css_modal_images.asp
+    para as img*/
+
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Raleway';
+            text-align: justify;
+        }
+        /* Style the barraLateral */
+
+
+        
+        div.barraLateral {
+            padding: 8.5em 0;
+            text-align: center;
+            position: fixed;
+            background-color: #E8E8E8;
+            width: 20%;
+            height: 100vh;
+            background: linear-gradient(to right , transparent 95%, #FCFCFC ), url("https://images.pexels.com/photos/35766/pexels-photo.jpg?w=1260&h=750&auto=compress&cs=tinysrgb");
+            background-size: cover;
+            background-repeat: no-repeat right bottom;
+
+            -webkit-filter: grayscale(800%)opacity(90%)sepia(5%);
+            -moz-filter: grayscale(800%)opacity(90%)sepia(5%);
+            -o-filter: grayscale(800%)opacity(90%)sepia(5%);
+            -ms-filter: grayscale(800%)opacity(90%)sepia(5%);
+            filter: grayscale(800%)opacity(90%)sepia(5%);
+        }
+        /* Style the buttons inside the barraLateral */
+        
+        div.barraLateral button {
+            background-color: #AAA3A0;
+            color: white;
+            padding: 10% 10% 10% 10%;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: right;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 17px;
+            position: center;
+
+            background: linear-gradient(to right , transparent 95%  , white );
+        }
+        /* Change background color of buttons on hover */
+        
+        div.barraLateral button:hover {
+            background-color: #cdcdcd;
+            color: black;
+        }
+        /* Create an active/current "barraLateral button" class */
+        
+        div.barraLateral button.active {
+            background-color: #ccc;
+            color: black;
+        }
+        /* Style the barraLateral content */
+        
+        .barraLateralcontent {
+            text-align: center;
+            margin: auto 0;
+            margin-left: 20%;
+            /*tem que ficar em baixo para ser o ultimo a ser aplicado*/
+
+            background: #FCFCFC;
+        }
+        .coisas h1{
+            padding-top: 2em;
+            padding-bottom: 1em;
+            text-align: center;
+        }
+        p {
+            text-indent: 2em;
+        }
+        .coisas h2  , #Eventos  h2{
+            padding-top: 2em;
+            padding-bottom: 0.5em;
+            text-align: center;
+            float: center;
+        }        
+        .coisas p , #Eventos p{
+            padding-top: 1em;
+            padding-left: 2em;
+            padding-right: 2em;
+            margin: 0 5% 0 5%;
+        }
+        .coisas .todo p {
+            margin: 0 10% 0 5%;
+        }
+        .coisas .partes {
+            margin: 2em;
+            padding-top: 1.5em;
+            border-top: 1px solid #E8E8E8;
+
+        }
+        .coisas img {
+            filter: contrast(100%) drop-shadow(4px 4px 4px #131C19);
+            -webkit-filter: contrast(100%) drop-shadow(4px 4px 4px #131C19);
+        }
+        .coisas .imagemDeLado img {
+            padding: 0.5em;
+            padding-right: 1em;
+            float: left;
+            max-height: 60%;
+            min-height: 50%;
+            min-width: 55%;
+            max-width: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+        .coisas .partes h2 {
+            padding-bottom: 1em;
+        }
+        .coisas .partes::after {
+            content: "";
+            clear: both;
+            display: barraLateralle;
+        }
+        div#church-caixinha {
+            overflow: hidden;
+            position: relative;
+            margin: 0% 10% 2% 10%;
+            filter: contrast(100%) drop-shadow(4px 4px 4px #131C19);
+            -webkit-filter: contrast(100%) drop-shadow(4px 4px 4px #131C19);
+        }
+        div#church-caixinha input[type="radio"] {
+            display: none;
+        }
+        div#church-caixinha label img {
+            width: 20%;
+            display: block;
+            float: left;
+            clear: left;
+        }
+        div#church-caixinha label:hover {
+            cursor: pointer;
+        }
+        div#churches {
+            width: 90%;
+            position: relative;
+            margin-left: 22.5%;
+        }
+        div#churches figure {
+            margin: 0;
+            position: absolute;
+            height: 100%;
+            opacity: 0;
+            transform: scale(.8);
+            transition: .5s all linear;
+            width: 100%;
+        }
+        div#churches figure img {
+            width: 100%;
+        }
+        div#churches figure figcaption {
+            position: relative;
+            background: rgba(0, 0, 0, .6);
+            color: #fff;
+            font-size: 1rem;
+            padding: 1rem;
+            transition: 1s 1s all linear;
+            margin-top: 1.6rem;
+            line-height: 1.4;
+            text-align: left;
+        }
+        #vallbona:checked~#churches #monges,
+        #woodward:checked~#churches #presby,
+        #woodward2:checked~#churches #presby2 {
+            opacity: 1;
+            transform: scale(1);
+        }
+        #vallbona:checked~#churches #monges figcaption,
+        #woodward:checked~#churches #presby figcaption,
+        #woodward2:checked~#churches #presby2 figcaption {
+            top: -5rem;
+        }
+        .caixinha {
+            margin-right: 2%;
+            margin-bottom: 25%;
+            filter: contrast(100%) drop-shadow(4px 4px 4px #131C19) opacity(80%);
+            -webkit-filter: contrast(100%) drop-shadow(4px 4px 4px #131C19) opacity(80%);
+        }
+        .dois{
+            margin-bottom: 35%;
+        }
+
+         .tres ul li  {
+             max-width: 33%;
+        }
+
+        .dois ul li  {
+             max-width: 50%;
+        }
+
+        .caixinha ul li {
+            float: left;
+            list-style: none;
+            max-height: auto;
+            transition: .5s all linear;
+            filter: grayscale(20%);
+            -webkit-filter: grayscale(20%);
+        }
+        .caixinha ul li:hover {
+            filter: grayscale(0%) saturate(150%);
+            -webkit-filter: grayscale(0%) saturate(150%);
+        }
+        .caixinha ul li img {
+            max-width: 100%;
+            max-height: auto;
+        }
+        .caixinha ul li img {
+            max-width: 100%;
+            max-height: auto;
+        }
+        .topnav {
+            visibility: hidden;
+        }
+        @media screen and (max-width: 600px) {
+            div.barraLateral,
+            div.barraLateral button {
+                visibility: hidden;
+            }
+            .barraLateralcontent {
+                margin-left: 0%;
+                /*tem que ficar em baixo para ser o ultimo a ser aplicado*/
+            }
+            #navigation,
+            #menu {
+                visibility: hidden;
+            }
+            .topnav {
+                position: fixed;
+                visibility: visible;
+                overflow: hidden;
+                background-color: transparent;
+                min-width: 90%;
+                max-width: 100%;
+                right: 2em;
+                bottom: 2em;
+                z-index: 1;
+            }
+            .topnav button,
+            .topnav a {
+                float: left;
+                display: block;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+                background-color: #E8E8E8;
+                color: #54372b;
+            }
+ 
+            .topnav button {
+                display: none;
+                width: 100%;
+                outline: none;
+            }
+            .topnav a.icon {
+                color: #572828;
+                float: right;
+                display: block;
+                border: 5px solid #383333;
+                background-color: #E8E8E8;
+                border-radius: 100%;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .topnav.visivel {
+                border: 5px solid #383333;
+                border-radius: 15%;
+                position: fixed;
+                background-color: #333;
+                position: fixed;
+                min-width: 90%;
+                /*Tamanho*/
+                
+                max-width: 100%;
+                right: 3%;
+                bottom: 20px;
+            }
+            .topnav.visivel .icon {
+                border-radius: 0%;
+                padding: 10px 10px;
+                border: 1px solid #BE7272;
+            }
+            .topnav.visivel button {
+                float: none;
+                display: block;
+                text-align: center;
+                border-top: 1px solid #BE7272;
+            }
+            .topnav.visivel a.icon {
+                font-weight: normal;
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            .caixinha ul li {
+                min-width: 100%;
+                display: block;
+                right: 5%;
+                position: relative;
+                padding-bottom: 1em;
+                padding-top: 0.5em;
+
+            }
+            .coisas .imagemDeLado img {
+                float: none;
+                padding: 0em;
+                min-height: 100%;
+                max-width: 130%;
+                display: block;
+                right: 15%;
+                position: relative;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="barraLateral">
+        <button class="barraLaterallinks" onclick="infoSobre(event, &#39;Bela_Vista&#39;)" id="defaultOpen">Bela Vista</button>
+        <button class="barraLaterallinks" onclick="infoSobre(event, &#39;Belo_Horizonte&#39;)">Belo Horizonte</button>
+        <button class="barraLaterallinks active" onclick="infoSobre(event, &#39;Genipapu&#39;)">Genipapu</button>
+        <button class="barraLaterallinks" onclick="infoSobre(event, &#39;Campinas&#39;)">Campinas</button>
+
+    </div>
+
+    <div id="Bela_Vista" class="barraLateralcontent">
+        <div class="coisas">
+            <h1>Bela Vista</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+
+            <div class="partes imagemDeLado">
+                <h2>Pastor e Familia</h2>
+                <p class="tudo"><img src="img/familia.jpeg">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+
+            </div>
+
+            <div class="partes">
+                <h2>Departamento de Senhoras</h2>
+                <p class="tudo">
+                    <div class="caixinha dois">
+                        <ul>
+                            <li><img src="https://images.pexels.com/photos/578853/pexels-photo-578853.jpeg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+<!--                             <li><img src="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li> -->
+                        </ul>
+                    </div>
+                    <p>                    
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+            </div>
+
+            <div class="partes">
+                <h2>Departamento de Jovens</h2>
+                <p class="tudo">
+                    <div class="caixinha tres">
+                        <ul>
+                            <li><img src="https://images.pexels.com/photos/578853/pexels-photo-578853.jpeg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                        </ul>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+            </div>
+
+            <div class="partes">
+                <h2>Departamento de Missões</h2>
+                <p class="tudo">
+                    <div class="caixinha tres">
+                        <ul>
+                            <li><img src="https://images.pexels.com/photos/578853/pexels-photo-578853.jpeg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                        </ul>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+            </div>
+
+            <div class="partes">
+                <h2>Escola Dominical</h2>
+                <p class="tudo">
+                    <div class="caixinha tres">
+                        <ul>
+                            <li><img src="https://images.pexels.com/photos/578853/pexels-photo-578853.jpeg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                        </ul>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="Belo_Horizonte" class="barraLateralcontent">
+        <div class="coisas">
+            <h1>Belo Horizonte</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+
+            <div class="partes imagemDeLado">
+                <h2>Pastor e Familia</h2>
+                <p class="tudo"><img src="img/familia.jpeg">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+
+            </div>
+
+            <div class="partes">
+                <h2>Departamento de Senhoras</h2>
+                <p class="tudo">
+                    <div class="caixinha dois">
+                        <ul>
+                            <li><img src="https://images.pexels.com/photos/578853/pexels-photo-578853.jpeg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+<!--                             <li><img src="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li> -->
+                        </ul>
+                    </div>
+                    <p>                    
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+            </div>
+
+            <div class="partes">
+                <h2>Departamento de Jovens</h2>
+                <p class="tudo">
+                    <div class="caixinha tres">
+                        <ul>
+                            <li><img src="https://images.pexels.com/photos/578853/pexels-photo-578853.jpeg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                        </ul>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+            </div>
+
+            <div class="partes">
+                <h2>Departamento Infantil</h2>
+                <p class="tudo">
+                    <div class="caixinha tres">
+                        <ul>
+                            <li><img src="https://images.pexels.com/photos/578853/pexels-photo-578853.jpeg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                        </ul>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+            </div>
+
+            <div class="partes">
+                <h2>Departamento de Missões</h2>
+                <p class="tudo">
+                    <div class="caixinha tres">
+                        <ul>
+                            <li><img src="https://images.pexels.com/photos/578853/pexels-photo-578853.jpeg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                        </ul>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+            </div>
+
+            <div class="partes">
+                <h2>Escola Dominical</h2>
+                <p class="tudo">
+                    <div class="caixinha tres">
+                        <ul>
+                            <li><img src="https://images.pexels.com/photos/578853/pexels-photo-578853.jpeg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                        </ul>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="Genipapu" class="barraLateralcontent">
+        <div class="coisas">
+            <h1>Genipapu</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+
+            <div class="partes imagemDeLado">
+                <h2>Pastor e Familia</h2>
+                <p class="tudo"><img src="img/familia.jpeg">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+
+            </div>
+
+            <div class="partes">
+                <h2>Departamento de Senhoras</h2>
+                <p class="tudo">
+                    <div class="caixinha dois">
+                        <ul>
+                            <li><img src="https://images.pexels.com/photos/578853/pexels-photo-578853.jpeg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+<!--                             <li><img src="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li> -->
+                        </ul>
+                    </div>
+                    <p>                    
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+            </div>
+
+            <div class="partes">
+                <h2>Departamento de Jovens</h2>
+                <p class="tudo">
+                    <div class="caixinha tres">
+                        <ul>
+                            <li><img src="https://images.pexels.com/photos/578853/pexels-photo-578853.jpeg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                        </ul>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+            </div>
+
+            <div class="partes">
+                <h2>Departamento Infantil</h2>
+                <p class="tudo">
+                    <div class="caixinha tres">
+                        <ul>
+                            <li><img src="https://images.pexels.com/photos/578853/pexels-photo-578853.jpeg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                        </ul>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+            </div>
+
+            <div class="partes">
+                <h2>Departamento de Missões</h2>
+                <p class="tudo">
+                    <div class="caixinha tres">
+                        <ul>
+                            <li><img src="https://images.pexels.com/photos/578853/pexels-photo-578853.jpeg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                        </ul>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+            </div>
+
+            <div class="partes">
+                <h2>Escola Dominical</h2>
+                <p class="tudo">
+                    <div class="caixinha tres">
+                        <ul>
+                            <li><img src="https://images.pexels.com/photos/578853/pexels-photo-578853.jpeg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                        </ul>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="Campinas" class="barraLateralcontent" style="display: none;">
+        <div class="coisas">
+            <h1>Campinas</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+
+            <div class="partes imagemDeLado">
+                <h2>Pastor e Familia</h2>
+                <p class="tudo"><img src="img/familia.jpeg">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+
+            </div>
+
+            <div class="partes">
+                <h2>Departamento de Senhoras</h2>
+                <p class="tudo">
+                    <div class="caixinha dois">
+                        <ul>
+                            <li><img src="https://images.pexels.com/photos/578853/pexels-photo-578853.jpeg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+<!--                             <li><img src="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li> -->
+                        </ul>
+                    </div>
+                    <p>                    
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+            </div>
+
+            <div class="partes">
+                <h2>Departamento de Jovens</h2>
+                <p class="tudo">
+                    <div class="caixinha tres">
+                        <ul>
+                            <li><img src="https://images.pexels.com/photos/578853/pexels-photo-578853.jpeg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                        </ul>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+            </div>
+
+            <div class="partes">
+                <h2>Departamento Infantil</h2>
+                <p class="tudo">
+                    <div class="caixinha tres">
+                        <ul>
+                            <li><img src="https://images.pexels.com/photos/578853/pexels-photo-578853.jpeg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                        </ul>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+            </div>
+
+            <div class="partes">
+                <h2>Departamento de Missões</h2>
+                <p class="tudo">
+                    <div class="caixinha tres">
+                        <ul>
+                            <li><img src="https://images.pexels.com/photos/578853/pexels-photo-578853.jpeg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                        </ul>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+            </div>
+
+            <div class="partes">
+                <h2>Escola Dominical</h2>
+                <p class="tudo">
+                    <div class="caixinha tres">
+                        <ul>
+                            <li><img src="https://images.pexels.com/photos/578853/pexels-photo-578853.jpeg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                            <li><img src="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?h=350&auto=compress&cs=tinysrgb">
+                            </li>
+                        </ul>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <script>
+        function infoSobre(evt, nomeDaIgreja) {
+            var i, barraLateralcontent, barraLaterallinks;
+            barraLateralcontent = document.getElementsByClassName("barraLateralcontent");
+            for (i = 0; i < barraLateralcontent.length; i++) {
+                barraLateralcontent[i].style.display = "none";
+            }
+            barraLaterallinks = document.getElementsByClassName("barraLaterallinks");
+            for (i = 0; i < barraLaterallinks.length; i++) {
+                barraLaterallinks[i].className = barraLaterallinks[i].className.replace(" active", "");
+            }
+            document.getElementById(nomeDaIgreja).style.display = "block";
+            evt.currentTarget.className += " active";
+            document.getElementById("Eventos").style.display = "block";
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+    <div class="coisas">
+
+    </div>
+
+    <div class="topnav" id="myTopnav">
+        <button class="barraLaterallinks" onclick="infoSobre(event, &#39;Bela_Vista&#39;)" id="defaultOpen">Bela Vista</button>
+        <button class="barraLaterallinks" onclick="infoSobre(event, &#39;Belo_Horizonte&#39;)">Belo Horizonte</button>
+        <button class="barraLaterallinks active" onclick="infoSobre(event, &#39;Genipapu&#39;)">Genipapu</button>
+        <button class="barraLaterallinks" onclick="infoSobre(event, &#39;Campinas&#39;)">Campinas</button>
+        <a href="javascript:void(0);" class="icon" id="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+
+    <div id="Eventos" class="barraLateralcontent">
+
+            <div class="partes">
+                <h2>Eventos</h2>
+                <p class="tudo">
+
+                    <div id="church-caixinha">
+                        <label for="vallbona">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/vallbona-de-les-monges_thumb.jpg" alt>
+                        </label>
+                        <input type="radio" id="vallbona" name="churchy">
+
+                        <label for="woodward">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/woodward-avenue-presbyterian_thumb.jpg">
+                        </label>
+                        <input type="radio" id="woodward" name="churchy" checked>
+
+                        <label for="woodward2">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/woodward-avenue-presbyterian2_thumb.jpg" alt>
+                        </label>
+                        <input type="radio" id="woodward2" name="churchy">
+                        <div id="churches">
+                            <figure id="monges">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/vallbona-de-les-monges.jpg" alt="Photograph of a corridor in Vallbona de les monges Monastery, Catalonia, Spain by José Luis Mieza">
+                                <figcaption>Vallbona de les monges Monastery, Catalonia, Spain</figcaption>
+                            </figure>
+                            <figure id="presby">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/woodward-avenue-presbyterian.jpg" alt="Interior photograph of Woodward Avenue Presbyterian Church in Detroit Michigan by Rich Harris">
+                                <figcaption>Woodward Avenue Presbyterian Church, Detroit Michigan</figcaption>
+                            </figure>
+                            <figure id="presby2">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/woodward-avenue-presbyterian2.jpg" alt="Interior photograph of Woodward Avenue Presbyterian Church in Detroit Michigan by Rich Harris">
+                                <figcaption>Woodward Avenue Presbyterian Church, Detroit Michigan</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at dem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, libero sit ampulvinar metus, quis accumsan nisi tellus ut ante. Ut odio ipsum, sagittis vitae orci ac, iaculis bibendum magna. Curabitur sollicitudin, est hendrerit lobortis convallis, lectus augue sollicitudin mauris, sit amet varius enim libero vel sem. Praesent scelerisque at diam vitae volutpat. Vestibulum id egestas quam, in ornare massa. Etiam neque diam, porttitor et luctus sed, pellentesque tincidunt turpis. Vivamus malesuada malesuada sapien nec condimentum.</p>
+                </p>
+            </div>
+        </div>
+    <!--
+<div class="barraLateral">
+  <button class="barraLaterallinks" onclick="infoSobre(event, &#39;Bela_Vista&#39;)" id="defaultOpen">Bela Vista</button>
+  <button class="barraLaterallinks" onclick="infoSobre(event, &#39;Belo_Horizonte&#39;)">Belo Horizonte</button>
+  <button class="barraLaterallinks active" onclick="infoSobre(event, &#39;Genipapu&#39;)">Genipapu</button>
+  <button class="barraLaterallinks" onclick="infoSobre(event, &#39;Campinas&#39;)">Campinas</button>
+
+</div>*/-->
+
+
+</body>
+
+</html>

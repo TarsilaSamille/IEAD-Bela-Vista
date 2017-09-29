@@ -481,7 +481,7 @@ PARTES
     background: #2e5d5a;
     position: relative;
     overflow: hidden;
-    min-width: 300px;
+    min-height: 40vh;
     cursor: pointer;
     max-width: 80%;
     filter: drop-shadow(4px 4px 4px #131C19);
@@ -579,18 +579,22 @@ PARTES
 }
 /*TABELA*/
 
+#horario2{
+    display: none;
+}
+
 .tg-wrap {
     background: linear-gradient(to bottom left, transparent, white), url("https://images.pexels.com/photos/239659/pexels-photo-239659.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb");
     background-size: cover;
     -webkit-filter: opacity(90%);
     /* Safari */
-    
     background-filter: opacity(90%);
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
     min-height: 100%;
+    font-size: 15px;
 }
 .tg {
     padding: 40px;
@@ -601,38 +605,39 @@ PARTES
 }
 .tg td {
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
+    font-size: 1em;
     padding: 12px 5px;
     border-style: solid;
     border-width: 0px;
     overflow: hidden;
     word-break: normal;
+        text-align: center;
+    border: 1px solid #dbdbdb;
 }
 .tg th {
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-size: 2.5em;
     padding: 12px 5px;
     border-style: solid;
     border-width: 0px;
     overflow: hidden;
     word-break: normal;
+    font-weight: bold;
+    text-align: center
 }
 .tg .tg-hgcj {
     font-weight: bold;
     text-align: center;
     border-bottom: 1px solid #a8a4a4;
 }
-.tg .tg-s6z2,
-.tg-hgcj {
-    text-align: center;
-    border: 1px solid #dbdbdb;
-}
-.tg .tg-2fkl {
-    font-weight: bold;
-    font-size: 40px;
-    text-align: center
-}
-@media screen and (max-width: 767px) {
+
+@media screen and (max-width: 600px) {
+    #horario1{
+        display: none;
+    }
+    #horario2{
+        display: block;
+    }
     .tg {
         width: auto !important;
     }
@@ -643,6 +648,20 @@ PARTES
         overflow-x: ;
         -webkit-overflow-scrolling: touch;
     }
+
+    /*
+    .tg td {
+        font-size: 0.5em;
+        padding: 12px 5px;
+        overflow: hidden;
+        word-break: normal;
+    }
+    .tg th {
+        font-size: 2.5em;
+        padding: 12px 5px;
+        overflow: hidden;
+        word-break: normal;
+    }*/
 }
 /*CONTATO*/
 

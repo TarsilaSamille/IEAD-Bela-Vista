@@ -173,7 +173,7 @@ http://pixelcurse.com/
         font-size: 3.5vw;
     }
     #social-header ul li a img{
-        width: 6.5vw;
+        width: 8vw;
     }
 }
 
@@ -181,7 +181,6 @@ http://pixelcurse.com/
     #inicio h1 img{
         width: 20vw;
     }
-
     #inicio h1 {
         font-size: 13vw;           
     }
@@ -189,7 +188,7 @@ http://pixelcurse.com/
         font-size: 5vw;
     }
     #social-header ul li a img{
-        width: 7.5vw;
+        width: 11vw;
     }
 }
 @media screen and (max-width: 400px) {
@@ -203,7 +202,7 @@ http://pixelcurse.com/
         font-size: 7vw;
     }
     #social-header ul li a img{
-        width: 10.5vw;
+        width: 13vw;
     }
 
 }

@@ -89,16 +89,6 @@ http://pixelcurse.com/
 *
 */
 
-h1,
-.h1 {
-    margin: 0 auto;
-    font-weight: 100;
-    font-size: 3em;
-    -webkit-filter: drop-shadow(5px 5px 5px #383735);
-    /*SOMBRA*/
-    
-    filter: drop-shadow(5px 10px 5px 5px #383735);
-}
 #inicio {
     background: linear-gradient(to bottom, transparent 80%, white), url("https://images.pexels.com/photos/268261/pexels-photo-268261.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb");
     /*background-image: url("https://s-media-cache-ak0.pinimg.com/564x/56/04/c7/5604c77c7dd58f5818e8cb565aff94d1.jpg");*/
@@ -115,18 +105,109 @@ h1,
     justify-content: center;
     color: white;
     text-align: center;
-    font-size: 210%;
     margin-bottom: 10px;
 }
 #inicio h1 {
-    font-size: 10vh;
-}
-#inicio h3 {
+    font-size: 5vw;
+    letter-spacing: -4px;
+       
+    margin: 0 auto;
     -webkit-filter: drop-shadow(5px 5px 5px #383735);
     /*SOMBRA*/
-    
     filter: drop-shadow(5px 10px 5px 5px #383735);
 }
+#inicio h1 br{
+    display: none;
+}
+#inicio h3 {
+    font-size: 2vw;
+    /*SOMBRA*/
+    -webkit-filter: drop-shadow(5px 5px 5px #383735);
+    filter: drop-shadow(5px 10px 5px 5px #383735);
+}
+
+
+/*REDES SOCIAIS*/
+
+#social-header ul {
+    list-style: none;
+
+    padding-left: 0px;
+
+}
+#social-header ul li {
+    display: inline;
+    vertical-align: center;
+}
+#social-header ul li a {
+    display: inline-block;
+    text-decoration: none;
+}
+#social-header ul li a img{
+    width: 3.7vw;
+}
+
+#social-header ul li a img:hover {
+        /*SOMBRA*/
+    -webkit-filter: drop-shadow(5px 5px 5px #383735);
+    filter: drop-shadow(5px 10px 5px 5px #383735);
+}
+
+@media screen and (max-width: 1200px) {
+    #inicio h1 {
+        font-size: 6vw;
+    }
+    #inicio h3 {
+        font-size: 2.5vw;
+    }
+    #social-header ul li a img{
+        width: 4.5vw;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #inicio h1 {
+        font-size: 8vw;           
+    }
+    #inicio h3 {
+        font-size: 3.5vw;
+    }
+    #social-header ul li a img{
+        width: 6.5vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #inicio h1 img{
+        width: 20vw;
+    }
+
+    #inicio h1 {
+        font-size: 13vw;           
+    }
+    #inicio h3 {
+        font-size: 5vw;
+    }
+    #social-header ul li a img{
+        width: 7.5vw;
+    }
+}
+@media screen and (max-width: 400px) {
+    #inicio h1 br{
+        display: inherit;
+    }
+    #inicio h1 {
+        font-size: 20vw;
+    }
+    #inicio h3 {
+        font-size: 7vw;
+    }
+    #social-header ul li a img{
+        width: 10.5vw;
+    }
+
+}
+
 /*MENU DE CIMA DO HEADER*/
 
 #menu {
@@ -148,6 +229,7 @@ h1,
     
     margin-top: 0px;
     padding: 10px 30px;
+
 }
 #menu ul li {
     display: inline;
@@ -174,25 +256,7 @@ h1,
     color: #9B8282;
     /*COR DA LETRA*/
 }
-/*REDES SOCIAIS*/
 
-#social-header ul {
-    list-style: none;
-}
-#social-header ul li {
-    display: inline;
-    vertical-align: center;
-}
-#social-header ul li a {
-    display: inline-block;
-    text-decoration: none;
-}
-#social-header ul li a img:hover {
-    -webkit-filter: drop-shadow(5px 5px 5px #383735);
-    /*SOMBRA*/
-    
-    filter: drop-shadow(5px 10px 5px 5px #383735);
-}
 /*BARRA*/
 
 #navigation ol,

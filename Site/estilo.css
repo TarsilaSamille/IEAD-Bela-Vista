@@ -471,13 +471,14 @@ PARTES
 /*IGREJAS*/
 
 .figuraFrase {
+
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     max-width: 100%;
     text-align: center;
 }
-.figuraFrase figure {
+.figuraFrase  figure {
     background: #2e5d5a;
     position: relative;
     overflow: hidden;

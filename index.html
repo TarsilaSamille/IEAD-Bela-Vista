@@ -1,240 +1,279 @@
 <!DOCTYPE! html>
 
 
-<html>
+    <html>
 
-<head>
-    <title>AD Bela Vista</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <head>
+        <title>AD Bela Vista</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-    <!--icone-->
-    <link rel="icon" type="image/png" href="img/logo_white.png">
-    <!--referencia JQuery-->
-    <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <!--icone-->
+        <link rel="icon" type="image/png" href="img/logo_white.png">
+        <!--referencia JQuery-->
+        <script type="text/javascript" language="javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-    <!--referencia css-->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link href="estilo.css" rel="stylesheet" type="text/css">
-    <!--referencia JS-->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
+        <!--referencia css-->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link href="estilo.css" rel="stylesheet" type="text/css">
+        <!--referencia JS-->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
 
-    <!--Mapa-->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.0/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.3.0/dist/leaflet.js" integrity="sha512-C7BBF9irt5R7hqbUm2uxtODlUVs+IsNu2UULGuZN7gM+k/mmeG4xvIEac01BtQa4YIkUpp23zZC4wIwuXaPMQA==" crossorigin=""></script>
-    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
-    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+        <!--Mapa-->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.0/dist/leaflet.css"
+            integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+            crossorigin="" />
+        <!-- Make sure you put this AFTER Leaflet's CSS -->
+        <script src="https://unpkg.com/leaflet@1.3.0/dist/leaflet.js"
+            integrity="sha512-C7BBF9irt5R7hqbUm2uxtODlUVs+IsNu2UULGuZN7gM+k/mmeG4xvIEac01BtQa4YIkUpp23zZC4wIwuXaPMQA=="
+            crossorigin=""></script>
+        <script
+            src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+        <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
+            rel='stylesheet' />
 
-    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js'></script>
-    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.mapbox.css' rel='stylesheet' />
+        <script
+            src='https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js'></script>
+        <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.mapbox.css'
+            rel='stylesheet' />
 
-    <style type="text/css">
-        #mapid { height: 80vh; 
-            width: 80vw;
-            margin: 0 auto;
-            z-index: 0;}
-    </style>
-
-
-
-
-</head>
-
-<body>
-
-    <!--Inicio-->
-
-    <div id="inicio">
-        <nav id="menu">
-            <ul >
-                <li><a href="#localizassao2" target="" class="shake">igrejas</a>
-                </li>
-                <li><a href="http://portalcadb.com/historia-da-assembleia-de-deus/" target="_blank" >história</a>
-                </li>
-            </ul>
-        </nav>
+        <style type="text/css">
+            #mapid {
+                height: 80vh;
+                width: 80vw;
+                margin: 0 auto;
+                z-index: 0;
+            }
+        </style>
 
 
 
-        <h1><img align="center" width="90em" src="img/logobv (2).png">AD Bela Vista</h1>
-        <p></p>
-        <h3>Igreja Evangélica Assembleia de Deus em Bela Vista</h3>
 
-        <!--Redes Sociais-->
+    </head>
 
-        <div id="social-header">
-            <ul>
-                <li>
-                    <a target="_blank" href="https://www.facebook.com/assembleiadedbv">
+    <body>
 
-                        <img src="img/facebook.png" width="50">
+        <!--Inicio-->
 
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://api.whatsapp.com/send?1=pt_BR&phone=5584988965350">
-
-                        <img src="img/whatsapp.png" width="50">
-
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="#">
-
-                        <img src="img/google.png"  width="50">
-
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="#">
-
-                        <img src="img/youtube.png"  width="50">
-
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://www.instagram.com/adbelavistasga">
-
-                        <img src="img/instagram.png" width="50">
-
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" href="#">
+        <div id="inicio">
+            <nav id="menu">
+                <ul>
+                    <li><a href="#localizassao2" target="" class="shake">igrejas</a>
+                    </li>
+                    <li><a href="http://portalcadb.com/historia-da-assembleia-de-deus/" target="_blank">história</a>
+                    </li>
+                </ul>
+            </nav>
 
 
-                    </a>
-                </li>
-            </ul>
+
+            <h1><img align="center" width="90em" src="img/logobv (2).png">AD Bela Vista</h1>
+            <p></p>
+            <h3>Igreja Evangélica Assembleia de Deus em Bela Vista</h3>
+
+            <!--Redes Sociais-->
+
+            <div id="social-header">
+                <ul>
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/assembleiadedbv">
+
+                            <img src="img/facebook.png" width="50">
+
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://api.whatsapp.com/send?1=pt_BR&phone=5584988965350">
+
+                            <img src="img/whatsapp.png" width="50">
+
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+
+                            <img src="img/google.png" width="50">
+
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+
+                            <img src="img/youtube.png" width="50">
+
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/iead_bela_vista">
+
+                            <img src="img/instagram.png" width="50">
+
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
 
-    </div>
+
+
+        <!--Historia-->
+
+
+        <article class="pedasso" id="historia">
+            <h2>História</h2>
+            <p>
+                <i>&nbsp;&nbsp;&nbsp;&nbsp;"Pouco tempo depois, Gunnar Vingren participou de uma convenção de igrejas
+                    batistas, em Chicago. Essas igrejas aceitaram o Movimento Pentecostal. Ali ele conheceu outro jovem
+                    sueco que se chamava Daniel Berg. Esse jovem também fora batizado com o Espírito Santo. <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Após uma ampla troca de informações, experiências e idéias, Daniel Berg e
+                    Gunnar Vingren descobriram que Deus os estava guiando numa mesma direção, isto é: o Senhor desejava
+                    enviá-los com a mensagem do Evangelho a terras distantes, mas nenhum dos dois sabia exatamente para
+                    onde seriam enviados. <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Algum tempo depois, Daniel Berg foi visitar o pastor Vingren em South Bend.
+                    Durante aquela visita, quando participavam de uma reunião de oração, o Senhor lhes falou, através de
+                    uma mensagem profética, que eles deveriam partir para pregar o Evangelho e as bênçãos do Avivamento
+                    Pentecostal. O lugar tinha sido mencionado na profecia: Pará. Nenhum dos presentes conhecia aquela
+                    localidade. Após a oração, os dois jovens foram a uma biblioteca à procura de um mapa que lhes
+                    indicasse onde o Pará estava localizado. Foi quando descobriram que se tratava de um estado do Norte
+                    do Brasil."<br></i>
+
+                &nbsp;&nbsp;&nbsp;&nbsp; No início do século XX, apesar da presença de imigrantes alemães e suíços de
+                origem protestante e do valoroso trabalho de missionários de igrejas evangélicas tradicionais, nosso
+                país era ainda quase que totalmente católico. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;A origem das Assembléias de Deus no Brasil está no fogo do reavivamento que
+                varreu o mundo por volta de 1900, início do século 20, especialmente na América do Norte. Os
+                participantes desse reavivamento foram cheios do Espírito Santo da mesma forma que os discípulos e os
+                seguidores de Jesus durante a Festa Judaica do Pentecostes, no início da Igreja Primitiva (Atos cap. 2).
+                Assim, eles foram chamados de pentecostais.
+            </p>
+
+            <a href="http://portalcadb.com/historia-da-assembleia-de-deus/" id="butao" class="butao btn btn-lg">Saber
+                Mais...</a>
+            <p>
+                <br />
+            </p>
+
+        </article>
+
+
+        <!--Igrejas-->
+
+        <article class="pedasso" id="igrejas">
 
 
 
-    <!--Historia-->
 
-
-    <article class="pedasso" id="historia">
-        <h2>História</h2>
-        <p>
-             <i>&nbsp;&nbsp;&nbsp;&nbsp;"Pouco tempo depois, Gunnar Vingren participou de uma convenção de igrejas batistas, em Chicago. Essas igrejas aceitaram o Movimento Pentecostal. Ali ele conheceu outro jovem sueco que se chamava Daniel Berg. Esse jovem também fora batizado com o Espírito Santo. <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;Após uma ampla troca de informações, experiências e idéias, Daniel Berg e Gunnar Vingren descobriram que Deus os estava guiando numa mesma direção, isto é: o Senhor desejava enviá-los com a mensagem do Evangelho a terras distantes, mas nenhum dos dois sabia exatamente para onde seriam enviados. <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;Algum tempo depois, Daniel Berg foi visitar o pastor Vingren em South Bend. Durante aquela visita, quando participavam de uma reunião de oração, o Senhor lhes falou, através de uma mensagem profética, que eles deveriam partir para pregar o Evangelho e as bênçãos do Avivamento Pentecostal. O lugar tinha sido mencionado na profecia: Pará. Nenhum dos presentes conhecia aquela localidade. Após a oração, os dois jovens foram a uma biblioteca à procura de um mapa que lhes indicasse onde o Pará estava localizado. Foi quando descobriram que se tratava de um estado do Norte do Brasil."<br></i>
-
-           &nbsp;&nbsp;&nbsp;&nbsp; No início do século XX, apesar da presença de imigrantes alemães e suíços de origem protestante e do valoroso trabalho de missionários de igrejas evangélicas tradicionais, nosso país era ainda quase que totalmente católico. <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;A origem das Assembléias de Deus no Brasil está no fogo do reavivamento que varreu o mundo por volta de 1900, início do século 20, especialmente na América do Norte.       Os participantes desse reavivamento foram cheios do Espírito Santo da mesma forma que os discípulos e os seguidores de Jesus durante a Festa Judaica do Pentecostes, no início da Igreja Primitiva (Atos cap. 2). Assim, eles foram chamados de pentecostais. 
-        </p>
-
-        <a href="http://portalcadb.com/historia-da-assembleia-de-deus/" id="butao" class="butao btn btn-lg">Saber Mais...</a>
-        <p>
-            <br/>
-        </p>
-
-    </article>
-
-
-    <!--Igrejas-->
-
-    <article class="pedasso" id="igrejas">
-
-
-
-
-        <h2>Igrejas</h2>
+            <h2>Igrejas</h2>
             <div class="figuraFrase">
-                <figure >
+                <figure>
                     <img src="https://tympanus.net/Development/HoverEffectIdeas/img/11.jpg" alt="img11" />
                     <figcaption>
-                        <a href="#localizassao2" target="" > </a>
-                            <h2>Bela <span>Vista</span></h2>
-                            <p>Mas Cristo é fiel como Filho sobre a casa de Deus; e essa casa somos nós, se é que nos apegamos firmemente à confiança e à esperança da qual nos gloriamos.<br> Hebreus 3:6</p>
-                       <a href="#localizassao2" target="" > </a>
+                        <a href="#localizassao2" target=""> </a>
+                        <h2>Bela <span>Vista</span></h2>
+                        <p>Mas Cristo é fiel como Filho sobre a casa de Deus; e essa casa somos nós, se é que nos
+                            apegamos firmemente à confiança e à esperança da qual nos gloriamos.<br> Hebreus 3:6</p>
+                        <a href="#localizassao2" target=""> </a>
                     </figcaption>
                 </figure>
-                <figure >
+                <figure>
                     <img src="https://tympanus.net/Development/HoverEffectIdeas/img/3.jpg" alt="img03" />
                     <figcaption>
-                        <a href="#localizassao2" target="" > </a>
-                            <h2>Belo <span>Horizonte</span></h2>
-                            <p>Uma coisa pedi ao Senhor
+                        <a href="#localizassao2" target=""> </a>
+                        <h2>Belo <span>Horizonte</span></h2>
+                        <p>Uma coisa pedi ao Senhor
                             e a procuro:
                             que eu possa viver na casa do Senhor
                             todos os dias da minha vida,
                             para contemplar a bondade do Senhor
                             e buscar sua orientação no seu templo. <br>
                             Salmos 27:4</p>
-                        <a href="#localizassao2" target="" > </a>
+                        <a href="#localizassao2" target=""> </a>
                     </figcaption>
 
 
-                
+
                 </figure>
 
                 <div style="margin: 0% 50%;"></div>
-                
-                <figure >
+
+                <figure>
                     <img src="https://tympanus.net/Development/HoverEffectIdeas/img/3.jpg" alt="img03" />
                     <figcaption>
-                        <a href="#localizassao2" target="" > </a>
-                            <h2> <span>Genipapu</span></h2>
-                            <p>Como são felizes aqueles que escolhes
+                        <a href="#localizassao2" target=""> </a>
+                        <h2> <span>Genipapu</span></h2>
+                        <p>Como são felizes aqueles que escolhes
                             e trazes a ti para que vivam nos teus átrios!
                             Transbordamos de bênçãos da tua casa,
                             do teu santo templo! <br>
                             Salmos 65:4</p>
-                        <a href="#localizassao2" target="" > </a>
+                        <a href="#localizassao2" target=""> </a>
                     </figcaption>
                 </figure>
 
-                <figure >
+                <figure>
                     <img src="img/campinas.jpg" alt="campinas" />
                     <figcaption>
-                        <a href="#localizassao2" target="" > </a>
-                            <h2> <span>Campinas</span></h2>
-                            <p>Melhor é um dia nos teus átrios
+                        <a href="#localizassao2" target=""> </a>
+                        <h2> <span>Campinas</span></h2>
+                        <p>Melhor é um dia nos teus átrios
                             do que mil noutro lugar;
                             prefiro ficar à porta da casa do meu Deus
-                            a habitar nas tendas dos ímpios.  <br>
+                            a habitar nas tendas dos ímpios. <br>
                             Salmos 84:10</p>
-                        <a href="#localizassao2" target="" > </a>
+                        <a href="#localizassao2" target=""> </a>
                     </figcaption>
-                
+
                 </figure>
             </div>
 
 
 
-    </article>
+        </article>
 
-    <!--Localização-->
+        <!--Localização-->
 
-    <article id="localizassao1" class="pedasso">
-        <br/>
-        <br/>
-        <h2>Área Eclesiástica de AD Bela Vista</h2>
-        <h5>Mapa geopolitico de São Gonçalo do Amarante</h3>
-                <br/>
-                <img  src="img/mapa.jpg">
-                <p><br/><br/></p>
+        <article id="localizassao1" class="pedasso">
+            <br />
+            <br />
+            <h2>Área Eclesiástica de AD Bela Vista</h2>
+            <h5>Mapa geopolitico de São Gonçalo do Amarante</h3>
+                <br />
+                <img src="img/mapa.jpg">
+                <p><br /><br /></p>
+
+        </article>
+
+
+        <article id="localizassao1" class="pedasso">
+            <h2>Cultos</h2>
+
+            <div style="    margin: 0 30vh;            ">
+                <iframe
+                    src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fassembleiadedbv%2Fvideos%2F1486641931520434%2F&show_text=false&width=566&height=318&appId"
+                    width="566" height="318" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                    allowTransparency="true" allow="encrypted-media" allowFullScreen="true"></iframe>
+            </div>
 
         </article>
 
 
 
-
-
-
-
-
         <!--Tabela-->
 
-        <article id="horario1" >
-            <div  class="tg-wrap" align="center">
+        <article id="horario1">
+            <div class="tg-wrap" align="center">
                 <table class="tg">
-                    <th  colspan="4"> <hr>⚓ Horário dos Cultos ⚓</th>
+                    <th colspan="4">
+                        <hr>⚓ Horário dos Cultos ⚓</th>
                     </tr>
                     <tr>
                         <td class="tg-hgcj">⛪Bela Vista</td>
@@ -309,217 +348,228 @@
                         <td class="tg-s6z2" colspan="2">🕔08h – Escola Dominical </td>
                     </tr>
 
-                </table><p></p><p></p>
+                </table>
+                <p></p>
+                <p></p>
             </div>
         </article>
 
-        <article id="horario2" >
-             <div  class="tg-wrap" align="center">
+        <article id="horario2">
+            <div class="tg-wrap" align="center">
                 <table class="tg">
-                  <th  colspan="4"> <hr>⚓ Horário dos Cultos ⚓</th>
+                    <th colspan="4">
+                        <hr>⚓ Horário dos Cultos ⚓</th>
                     </tr>
-                  <tr>
-                    <td class="tg-hgcj">⛪Bela Vista</td>
-                    <td class="tg-hgcj">⛪Genipapu</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-s6z2">📅Terca-feira</td>
-                    <td class="tg-s6z2">📅Quarta-feira</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-s6z2">🕔19h–Círculo de Oração</td>
-                    <td class="tg-s6z2">🕔19h–Culto da Vitória</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-s6z2">📅Quinta-feira</td>
-                    <td class="tg-s6z2">📅Sexta-feira</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-s6z2">🕔19h–Culto de doutrina</td>
-                    <td class="tg-s6z2">🕔19h–Culto de doutrina</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-hgcj">⛪Belo Horizonte</td>
-                    <td class="tg-hgcj">⛪Campinas</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-s6z2">Quarta-feira</td>
-                    <td class="tg-s6z2">📅Sábado</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-s6z2">🕔19h–Círculo de Oração</td>
-                    <td class="tg-s6z2" rowspan="3">🕔19h – Culto de Louvor <br>e Palavra com a mocidade</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-s6z2">📅Sexta-feira</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-s6z2">🕔19h–Culto de doutrina</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-hgcj" colspan="2">⚓ Cultos de domingo em Bela Vista</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-s6z2">📅 Primeiro domingo</td>
-                    <td class="tg-s6z2">📅 Segundo domingo</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-s6z2">🕔19h – Culto de senhoras</td>
-                    <td class="tg-s6z2">🕔19h – Celebração da Ceia</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-s6z2">📅 Terceiro domingo</td>
-                    <td class="tg-s6z2">📅 Último domingo</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-s6z2">🕔19h – Culto de mocidade</td>
-                    <td class="tg-s6z2">🕔19h – Culto de missões</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-hgcj" colspan="2">⚓ Cultos de domingo em Belo Horizonte</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-s6z2">📅 Primeiro domingo</td>
-                    <td class="tg-s6z2">📅 Segundo domingo</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-s6z2">🕔19h – Culto de senhoras</td>
-                    <td class="tg-s6z2">🕔19h – Celebração da Ceia</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-s6z2">📅 Terceiro domingo</td>
-                    <td class="tg-s6z2">📅 Último domingo</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-s6z2">🕔19h – Culto de mocidade</td>
-                    <td class="tg-s6z2">🕔19h – Culto de missões</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-hgcj" colspan="2">⚓ Escolas Dominicais</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-s6z2">⛪Bela Vista</td>
-                    <td class="tg-s6z2">⛪Belo Horizonte</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-s6z2">🕔09h – Escola Dominical</td>
-                    <td class="tg-s6z2">🕔08h – Escola Dominical</td>
-                  </tr>
+                    <tr>
+                        <td class="tg-hgcj">⛪Bela Vista</td>
+                        <td class="tg-hgcj">⛪Genipapu</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-s6z2">📅Terca-feira</td>
+                        <td class="tg-s6z2">📅Quarta-feira</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-s6z2">🕔19h–Círculo de Oração</td>
+                        <td class="tg-s6z2">🕔19h–Culto da Vitória</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-s6z2">📅Quinta-feira</td>
+                        <td class="tg-s6z2">📅Sexta-feira</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-s6z2">🕔19h–Culto de doutrina</td>
+                        <td class="tg-s6z2">🕔19h–Culto de doutrina</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-hgcj">⛪Belo Horizonte</td>
+                        <td class="tg-hgcj">⛪Campinas</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-s6z2">Quarta-feira</td>
+                        <td class="tg-s6z2">📅Sábado</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-s6z2">🕔19h–Círculo de Oração</td>
+                        <td class="tg-s6z2" rowspan="3">🕔19h – Culto de Louvor <br>e Palavra com a mocidade</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-s6z2">📅Sexta-feira</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-s6z2">🕔19h–Culto de doutrina</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-hgcj" colspan="2">⚓ Cultos de domingo em Bela Vista</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-s6z2">📅 Primeiro domingo</td>
+                        <td class="tg-s6z2">📅 Segundo domingo</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-s6z2">🕔19h – Culto de senhoras</td>
+                        <td class="tg-s6z2">🕔19h – Celebração da Ceia</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-s6z2">📅 Terceiro domingo</td>
+                        <td class="tg-s6z2">📅 Último domingo</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-s6z2">🕔19h – Culto de mocidade</td>
+                        <td class="tg-s6z2">🕔19h – Culto de missões</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-hgcj" colspan="2">⚓ Cultos de domingo em Belo Horizonte</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-s6z2">📅 Primeiro domingo</td>
+                        <td class="tg-s6z2">📅 Segundo domingo</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-s6z2">🕔19h – Culto de senhoras</td>
+                        <td class="tg-s6z2">🕔19h – Celebração da Ceia</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-s6z2">📅 Terceiro domingo</td>
+                        <td class="tg-s6z2">📅 Último domingo</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-s6z2">🕔19h – Culto de mocidade</td>
+                        <td class="tg-s6z2">🕔19h – Culto de missões</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-hgcj" colspan="2">⚓ Escolas Dominicais</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-s6z2">⛪Bela Vista</td>
+                        <td class="tg-s6z2">⛪Belo Horizonte</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-s6z2">🕔09h – Escola Dominical</td>
+                        <td class="tg-s6z2">🕔08h – Escola Dominical</td>
+                    </tr>
                 </table>
             </div>
         </article>
 
 
 
-                <p><br/><br/></p>
+        <p><br /><br /></p>
 
-    <!--Localização-->
+        <!--Localização-->
 
-    <article id="localizassao2" class="pedasso" style="z-index:1">
-        <br/>
-        <h2>Localização</h2>
-        <h5>São Gonçalo do Amarante - Rio Grande do Norte</h3>
+        <article id="localizassao2" class="pedasso" style="z-index:1">
+            <br />
+            <h2>Localização</h2>
+            <h5>São Gonçalo do Amarante - Rio Grande do Norte</h3>
 
-            <div id="mapid"></div>
+                <div id="mapid"></div>
 
-    </article>
-
-
-
-
-     <!--Barra de Navegação-->
-
-
-
-    <div class="topnav" id="myTopnav">
-        <a href="#inicio">Inicio</a>
-        <a href="#historia">Historia</a>
-        <a href="#igrejas">Igrejas</a>
-        <a href="#localizassao1">Localização</a>
-        <a href="#horario2">Horário</a>
-        <a href="#localizassao">Mapa</a>
-        <a href="#contato">Contato</a>
-        <a href="javascript:void(0);" class="icon" id="icon" onclick="myFunction()">&#9776;</a>
-    </div>
+        </article>
 
 
 
 
-    <nav id="navigation">
-        <ul>
-            <li>
-                <a href="#inicio" data-number="1">
-                    <span class="dot" onmouseover="changeTo(this)" onmouseout="changeBack(this)" onclick="mostrarAtivo(this);"></span>
-                    <span class="label">inicio</span>
-                </a>
-            </li>
-            <li>
-                <a href="#historia" data-number="2">
-                    <span class="dot" onmouseover="changeTo(this)" onmouseout="changeBack(this)" onclick="mostrarAtivo(this);"></span>
-                    <span class="label">historia</span>
-                </a>
-            </li>
-            <li>
-                <a href="#igrejas" data-number="4">
-                    <span class="dot" onmouseover="changeTo(this)" onmouseout="changeBack(this)" onclick="mostrarAtivo(this);"></span>
-                    <span class="label">igrejas</span>
-                </a>
-            </li>
-            <li>
-                <a href="#localizassao1" data-number="3">
-                    <span class="dot" onmouseover="changeTo(this)" onmouseout="changeBack(this)" onclick="mostrarAtivo(this);"></span>
-                    <span class="label">localização</span>
-                </a>
-            </li>
-            <li>
-                <a href="#horario1" data-number="4">
-                    <span class="dot" onmouseover="changeTo(this)" onmouseout="changeBack(this)" onclick="mostrarAtivo(this);"></span>
-                    <span class="label">horário</span>
-                </a>
-            </li>
-            <li>
-                <a href="#localizassao2" data-number="3">
-                    <span class="dot" onmouseover="changeTo(this)" onmouseout="changeBack(this)" onclick="mostrarAtivo(this);"></span>
-                    <span class="label">mapa</span>
-                </a>
-            </li>
-            <li>
-                <a href="#contato" data-number="6">
-                    <span class="dot" onmouseover="changeTo(this)" onmouseout="changeBack(this)" onclick="mostrarAtivo(this);"></span>
-                    <span class="label">contato</span>
-                </a>
-            </li>
-            <li>
-                <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        <!--Barra de Navegação-->
 
-            </li>
-        </ul>
-    </nav>
+
+
+        <div class="topnav" id="myTopnav">
+            <a href="#inicio">Inicio</a>
+            <a href="#historia">Historia</a>
+            <a href="#igrejas">Igrejas</a>
+            <a href="#localizassao1">Localização</a>
+            <a href="#horario2">Horário</a>
+            <a href="#localizassao">Mapa</a>
+            <a href="#contato">Contato</a>
+            <a href="javascript:void(0);" class="icon" id="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+
+
+
+
+        <nav id="navigation">
+            <ul>
+                <li>
+                    <a href="#inicio" data-number="1">
+                        <span class="dot" onmouseover="changeTo(this)" onmouseout="changeBack(this)"
+                            onclick="mostrarAtivo(this);"></span>
+                        <span class="label">inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#historia" data-number="2">
+                        <span class="dot" onmouseover="changeTo(this)" onmouseout="changeBack(this)"
+                            onclick="mostrarAtivo(this);"></span>
+                        <span class="label">historia</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#igrejas" data-number="4">
+                        <span class="dot" onmouseover="changeTo(this)" onmouseout="changeBack(this)"
+                            onclick="mostrarAtivo(this);"></span>
+                        <span class="label">igrejas</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#localizassao1" data-number="3">
+                        <span class="dot" onmouseover="changeTo(this)" onmouseout="changeBack(this)"
+                            onclick="mostrarAtivo(this);"></span>
+                        <span class="label">localização</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#horario1" data-number="4">
+                        <span class="dot" onmouseover="changeTo(this)" onmouseout="changeBack(this)"
+                            onclick="mostrarAtivo(this);"></span>
+                        <span class="label">horário</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#localizassao2" data-number="3">
+                        <span class="dot" onmouseover="changeTo(this)" onmouseout="changeBack(this)"
+                            onclick="mostrarAtivo(this);"></span>
+                        <span class="label">mapa</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contato" data-number="6">
+                        <span class="dot" onmouseover="changeTo(this)" onmouseout="changeBack(this)"
+                            onclick="mostrarAtivo(this);"></span>
+                        <span class="label">contato</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" style="font-size:15px;" class="icon"
+                        onclick="myFunction()">&#9776;</a>
+
+                </li>
+            </ul>
+        </nav>
 
         <article class="pedasso" id="contato">
 
 
 
             <div class="contato">
-                        <h2>Contato</h2>
+                <h2>Contato</h2>
 
-              <form action="https://formspree.io/tarsillasamille@gmail.com" method="POST">
-                <label for="fname">Nome</label>
-                <input type="text" id="fname" name="firstname" placeholder="Seu nome...">
+                <form action="https://formspree.io/tarsillasamille@gmail.com" method="POST">
+                    <label for="fname">Nome</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Seu nome...">
 
-                <label for="fname">E-mail</label>
-                <input type="text" id="fname" name="firstname" placeholder="Seu e-mail...">
+                    <label for="fname">E-mail</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Seu e-mail...">
 
-                <label for="subject">Mensagem</label>
-                <textarea id="subject" name="subject" placeholder="Escreva algo" style="height:200px"></textarea>
+                    <label for="subject">Mensagem</label>
+                    <textarea id="subject" name="subject" placeholder="Escreva algo" style="height:200px"></textarea>
 
-                <input type="submit" id="butao" class="butao btn btn-lg" value="Enviar">
-              </form>
+                    <input type="submit" id="butao" class="butao btn btn-lg" value="Enviar">
+                </form>
             </div>
         </article>
 
-        <footer >
-                <div>
+        <footer>
+            <div>
         </footer>
 
 
@@ -530,47 +580,42 @@
 
 
 
-    <script type="text/javascript">
+        <script type="text/javascript">
 
 
 
-     var grayscale = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-         maxZoom:17,
-    attribution: 'Tiles &copy; Esri &mdash; '
-});
+            var grayscale = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                maxZoom: 17,
+                attribution: 'Tiles &copy; Esri &mdash; '
+            });
 
 
-         var cities = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-        maxZoom: 17,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    });
+            var cities = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+                maxZoom: 17,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            });
 
-         var map = L.map('mapid', {
-    center: [-5.7977392,-35.4182057899],
-    zoom: 13,
-    layers: [cities,grayscale]
-});
-    
-        L.marker([-5.797641, -35.415647]).addTo(map).bindPopup("<h4><h4><b>Olá!!!</b><br />Somos a Igreja de Bela Vista<h4/> <a href='https://www.google.com.br/maps/dir/-5.797641,+-35.415647//@-5.7962325,-35.4206986,1771m/data=!3m1!1e3!4m7!4m6!1m3!2m2!1d-35.415647!2d-5.797641!1m0!3e0'>  <input type='button' value='Visite-nos'  id='butao' class='butao btn btn-lg'/></a>");
-    
+            var map = L.map('mapid', {
+                center: [-5.7977392, -35.4182057899],
+                zoom: 13,
+                layers: [cities, grayscale]
+            });
 
-        L.marker([-5.801653, -35.429200]).addTo(map).bindPopup("<h4><b>Olá!!!</b><br />Somos a Igreja de Genipapu<h4/><a href='https://www.google.com.br/maps/dir/-5.801653,+-35.429200//@-5.80145,-35.4304901,191m/data=!3m1!1e3!4m7!4m6!1m3!2m2!1d-35.4292!2d-5.801653!1m0!3e0'><input type='button' value='Visite-nos'  id='butao' class='butao btn btn-lg'/></a>");
-    
-
-        L.marker([-5.781404, -35.393306]).addTo(map).bindPopup("<h4><b>Olá!!!</b><br />Somos a Igreja de Belo Horizonte <h4/> <a href='https://www.google.com.br/maps/dir/-5.781404,+-35.393306//@-5.7814143,-35.3938706,199m/data=!3m1!1e3!4m7!4m6!1m3!2m2!1d-35.393306!2d-5.781404!1m0!3e0'>  <input type='button' value='Visite-nos'  id='butao' class='butao btn btn-lg'/></a>");
-    
+            L.marker([-5.797641, -35.415647]).addTo(map).bindPopup("<h4><h4><b>Olá!!!</b><br />Somos a Igreja de Bela Vista<h4/> <a href='https://www.google.com.br/maps/dir/-5.797641,+-35.415647//@-5.7962325,-35.4206986,1771m/data=!3m1!1e3!4m7!4m6!1m3!2m2!1d-35.415647!2d-5.797641!1m0!3e0'>  <input type='button' value='Visite-nos'  id='butao' class='butao btn btn-lg'/></a>");
 
 
+            L.marker([-5.801653, -35.429200]).addTo(map).bindPopup("<h4><b>Olá!!!</b><br />Somos a Igreja de Genipapu<h4/><a href='https://www.google.com.br/maps/dir/-5.801653,+-35.429200//@-5.80145,-35.4304901,191m/data=!3m1!1e3!4m7!4m6!1m3!2m2!1d-35.4292!2d-5.801653!1m0!3e0'><input type='button' value='Visite-nos'  id='butao' class='butao btn btn-lg'/></a>");
 
-    map.addControl(new L.Control.Fullscreen());
 
-
-    </script>
+            L.marker([-5.781404, -35.393306]).addTo(map).bindPopup("<h4><b>Olá!!!</b><br />Somos a Igreja de Belo Horizonte <h4/> <a href='https://www.google.com.br/maps/dir/-5.781404,+-35.393306//@-5.7814143,-35.3938706,199m/data=!3m1!1e3!4m7!4m6!1m3!2m2!1d-35.393306!2d-5.781404!1m0!3e0'>  <input type='button' value='Visite-nos'  id='butao' class='butao btn btn-lg'/></a>");
 
 
 
 
+            map.addControl(new L.Control.Fullscreen());
 
+
+        </script>
 
 
 
@@ -581,4 +626,4 @@
 
 
 
-</html>
+    </html>
